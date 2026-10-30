@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sayali Bhagyawant · AI Engineer</title>
+  <meta name="description" content="Sayali Bhagyawant — engineer building AI agents, RAG systems and full-stack products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // set the theme before first paint: saved choice, else the OS preference
+    (function () {
+      var t; try { t = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23c6f432'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='700' fill='%230a0a0f'>S</text></svg>" />
+</head>
+<body data-root="">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- the dock navigation is built by common.js -->
+  <header class="topbar" id="top">
+    <a href="#top" class="logo">sayali<span>.</span></a>
+    <p class="topbar-meta">B.E. EXTC · TCET · India</p>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <p class="eyebrow"><span class="dot"></span> India · Open to internships &amp; full-time roles</p>
+        <h1 class="hero-title">
+          Hi, I'm <span class="grad">Sayali</span>.<br />
+          I build <span class="rotator" id="rotator">AI agents</span>
+        </h1>
+        <p class="hero-sub">
+          Full-stack engineer building <strong>AI agents, RAG systems and multi-agent workflows</strong>
+          that hold up in production, from on-premise document assistants to multilingual safety platforms.
+        </p>
+        <div class="hero-cta">
+          <a href="#work" class="btn">See the work →</a>
+          <a href="playground.html" class="btn btn-ghost">There's a more fun version ✦</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/sayali3050" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/sayali-bhagyawant-726a87310/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Live "agent trace" terminal -->
+      <div class="hero-right">
+        <div class="terminal tilt">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+            <p>agent.run(ticket)</p>
+          </div>
+          <pre class="terminal-body" id="trace"></pre>
+        </div>
+        <div class="float-chip chip-1">🧠 LLM reasoning</div>
+        <div class="float-chip chip-2">🔧 tool calls</div>
+        <div class="float-chip chip-3">📚 RAG · FAISS</div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>LangChain</span><span>✦</span><span>LangGraph</span><span>✦</span><span>FastAPI</span><span>✦</span><span>React</span><span>✦</span><span>Ollama</span><span>✦</span><span>FAISS</span><span>✦</span><span>PostgreSQL</span><span>✦</span><span>Docker</span><span>✦</span><span>TypeScript</span><span>✦</span><span>OpenAI</span><span>✦</span>
+        <span>LangChain</span><span>✦</span><span>LangGraph</span><span>✦</span><span>FastAPI</span><span>✦</span><span>React</span><span>✦</span><span>Ollama</span><span>✦</span><span>FAISS</span><span>✦</span><span>PostgreSQL</span><span>✦</span><span>Docker</span><span>✦</span><span>TypeScript</span><span>✦</span><span>OpenAI</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <p class="section-tag">01 — About</p>
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <div class="photo-frame">
+            <img src="sayali%20photo_2.jpeg" alt="Sayali Bhagyawant in the mountains" onerror="this.remove()" />
+            <div class="photo-fallback">SB</div>
+          </div>
+          <div class="photo-ring"></div>
+        </div>
+        <div class="about-text reveal">
+          <h2>Hi there! 👋</h2>
+          <p>
+            I'm <strong>Sayali Bhagyawant</strong>, an Electronics &amp; Telecommunication engineering
+            student at <strong>Thakur College of Engineering and Technology</strong> who likes the
+            moment an LLM stops just chatting and starts <em>doing things</em>: looking up accounts,
+            searching knowledge bases, routing tickets, and explaining its reasoning along the way.
+          </p>
+          <p>
+            Most recently I was an <strong>AI Web Development Intern at InAmigos Foundation</strong>,
+            shipping AI-powered features into a live production app. Before that I built Java
+            record-management systems at Oasis Infobyte. These days I'm deep into
+            <strong>agentic AI</strong>: multi-agent systems, MCP, agent evals and Claude.
+          </p>
+          <div class="stats">
+            <div><b data-count="2">0</b><span>internships</span></div>
+            <div><b data-count="5">0</b><span>AI &amp; full-stack projects</span></div>
+            <div><b data-count="8">0</b><span>certifications</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <p class="section-tag">02 — Toolbox</p>
+      <h2 class="section-title">What I build with</h2>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>🤖 AI / Agents</h3>
+          <div class="tags"><span>LLMs</span><span>RAG</span><span>Multi-agent systems</span><span>LangChain</span><span>Tool calling</span><span>MCP</span><span>Claude API</span><span>OpenAI API</span><span>Ollama</span><span>HuggingFace</span><span>Prompt engineering</span><span>Agent evals</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>💻 Languages</h3>
+          <div class="tags"><span>Python</span><span>Java</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML / CSS</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>⚙️ Backend</h3>
+          <div class="tags"><span>FastAPI</span><span>REST APIs</span><span>Pydantic</span><span>SQLAlchemy</span><span>JDBC</span><span>JWT / RBAC</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>🎨 Frontend</h3>
+          <div class="tags"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Responsive UI</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>🗄️ Databases</h3>
+          <div class="tags"><span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span><span>FAISS</span><span>Vector embeddings</span></div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>🚀 Tools &amp; Fundamentals</h3>
+          <div class="tags"><span>Git / GitHub</span><span>Docker</span><span>OpenCV</span><span>Vercel</span><span>OOP</span><span>DSA</span><span>DBMS</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <p class="section-tag">03 — Experience</p>
+      <h2 class="section-title">Where I've worked</h2>
+
+      <ol class="exp-index reveal">
+        <li><a href="#exp-1"><span>01</span> AI Web Development Intern <em>InAmigos Foundation</em></a></li>
+        <li><a href="#exp-2"><span>02</span> Java Development Intern <em>Oasis Infobyte</em></a></li>
+      </ol>
+
+      <div class="exp-list">
+        <details class="exp reveal" id="exp-1" open>
+          <summary>
+            <div class="exp-head">
+              <span class="exp-num">01</span>
+              <div>
+                <h3>AI Web Development Intern</h3>
+                <p class="exp-company">InAmigos Foundation · India</p>
+              </div>
+              <p class="exp-date">Jul 2026 – Aug 2026</p>
+            </div>
+            <span class="exp-toggle">Show details</span>
+          </summary>
+          <ul>
+            <li>Implemented new <b>AI-powered features in a live production application</b>, testing each release against key user flows to ensure stable operation before rollout.</li>
+            <li>Analyzed and resolved production issues with the development team, <b>tracing failures to their root cause</b> and improving performance and usability.</li>
+          </ul>
+          <div class="tags"><span>Python</span><span>FastAPI</span><span>React</span><span>JavaScript</span><span>OpenAI API</span><span>LangChain</span><span>REST APIs</span></div>
+        </details>
+
+        <details class="exp reveal" id="exp-2">
+          <summary>
+            <div class="exp-head">
+              <span class="exp-num">02</span>
+              <div>
+                <h3>Java Development Intern</h3>
+                <p class="exp-company">Oasis Infobyte · India</p>
+              </div>
+              <p class="exp-date">Dec 2025 – Jan 2026</p>
+            </div>
+            <span class="exp-toggle">Show details</span>
+          </summary>
+          <ul>
+            <li>Built <b>2 record-management applications</b>, an Online Reservation System and an Online Examination System, covering data entry, retrieval and maintenance workflows.</li>
+          </ul>
+          <div class="tags"><span>Java</span><span>MySQL</span><span>JDBC</span><span>OOP</span><span>Git</span></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <p class="section-tag">04 — Selected work</p>
+      <h2 class="section-title">Five things worth opening</h2>
+
+      <div class="projects">
+        <article class="project reveal">
+          <div class="project-thumb thumb-multi">
+            <div class="mock-agents">
+              <div class="agent a1">🔎 Retriever</div>
+              <div class="agent a2">🧪 Analyst</div>
+              <div class="agent a3">⚖️ Decider</div>
+              <div class="agent-out">→ recommendation + evidence</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">01 / Multi-agent · Decision support</p>
+            <h3>Autonomous Multi-Agent Research System</h3>
+            <p class="project-tagline">Specialized AI agents that research, analyze and decide together.</p>
+            <p>An AI decision-support system where <b>specialized agents</b> split the work: one retrieves information with RAG, one analyzes it, and one makes the decision. The whole pipeline is exposed through <b>REST APIs</b> with logging so it runs reliably.</p>
+            <div class="tags"><span>Python</span><span>LangChain</span><span>OpenAI</span><span>RAG</span><span>FastAPI</span></div>
+            <div class="project-links">
+              <a class="project-link" href="work/multi-agent-research.html">Read the write-up →</a>
+              <a class="project-link muted" href="https://github.com/sayali3050" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-thumb thumb-safeops">
+            <div class="mock-ui">
+              <div class="mock-row warn">⚠ Hazard reported · Line 3</div>
+              <div class="mock-row">🤖 AI: "Slip hazard, suggest wet-floor control"</div>
+              <div class="mock-row ok">✓ CAPA closed by supervisor</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">02 / Final-year project · Full-stack + AI</p>
+            <h3>SafeOps</h3>
+            <p class="project-tagline">An AI-assisted occupational health &amp; safety platform.</p>
+            <p>Analyzes industrial work processes to find the causes of <b>worker fatigue and drudgery</b>, then recommends safer practices through structured ergonomic assessment. Workers report hazards from their phones in <b>English, Hindi, Marathi or German</b>. AI classifies hazards and suggests controls, always labelled as a suggestion so a human makes the call. Includes CAPA workflows, risk scoring, PPE tracking, analytics and a site-wide emergency alarm.</p>
+            <div class="tags"><span>React</span><span>TypeScript</span><span>FastAPI</span><span>PostgreSQL</span><span>OpenCV</span><span>OpenAI</span><span>Docker</span></div>
+            <div class="project-links">
+              <a class="project-link" href="work/safeops.html">Read the write-up →</a>
+              <a class="project-link muted" href="https://github.com/sayali3050/OHS-Platform" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-thumb thumb-tam">
+            <div class="mock-flow">
+              <span>ticket</span><i>→</i><span>resolve_account</span><i>→</i><span>search_kb</span><i>→</i><span class="hl">route: TAM</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">03 / Agentic AI · Support automation</p>
+            <h3>TAM Triage Agent</h3>
+            <p class="project-tagline">An LLM agent that chooses its own tools to triage support tickets.</p>
+            <p>Resolves the account (even with a blank ID), gathers tier, renewal and usage context, retrieves policy articles, then decides category, priority, routing, escalation and duplicates. It drafts a customer reply and an internal note, with a full reasoning trace. Built for a dataset of 3,000 tickets, 200 accounts and 390 KB articles.</p>
+            <div class="tags"><span>Python</span><span>Tool calling</span><span>Ollama</span><span>Anthropic / OpenAI</span><span>Schema output</span></div>
+            <div class="project-links">
+              <a class="project-link" href="work/tam-triage-agent.html">Read the write-up →</a>
+              <a class="project-link muted" href="https://github.com/sayali3050/tam-agent-task" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-thumb thumb-rag">
+            <div class="mock-chat">
+              <div class="q">What's the refund window?</div>
+              <div class="a">30 days from delivery. <sup>[policy.pdf p.4]</sup></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">04 / RAG · On-premise AI</p>
+            <h3>Local RAG AI Agent</h3>
+            <p class="project-tagline">An on-premise document assistant: company data never leaves the machine.</p>
+            <p>Answers questions over internal documents with <b>source citations</b>. It finds relevant passages with FAISS and HuggingFace embeddings, then a local Llama 3.2 model writes a grounded answer. All data stays local and it runs at <b>zero external API cost</b>.</p>
+            <div class="tags"><span>LangChain</span><span>FastAPI</span><span>FAISS</span><span>HuggingFace</span><span>Ollama</span></div>
+            <div class="project-links">
+              <a class="project-link" href="work/local-rag-agent.html">Read the write-up →</a>
+              <a class="project-link muted" href="https://github.com/sayali3050/rag-ai-agent-" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-thumb thumb-care">
+            <div class="mock-temps">
+              <span style="--h:40%">36.8</span><span style="--h:45%">37.0</span><span style="--h:38%">36.7</span><span class="hl" style="--h:30%">✓</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-meta">05 / Healthcare · Frontend</p>
+            <h3>CareTrack Ward</h3>
+            <p class="project-tagline">Ward patient tracking with real clinical discharge rules.</p>
+            <p>Role-based workflows for nurses, doctors and admins. Duplicate-reading detection, bed management, and discharge eligibility computed from three fever-free days. Zero build step, responsive from desktop sidebar to mobile tab bar, light and dark themes.</p>
+            <div class="tags"><span>Vanilla JS</span><span>HTML / CSS</span><span>localStorage</span><span>Vercel</span></div>
+            <div class="project-links">
+              <a class="project-link" href="work/caretrack-ward.html">Read the write-up →</a>
+              <a class="project-link muted" href="https://care-tracker-three.vercel.app" target="_blank" rel="noopener">Live demo ↗</a>
+              <a class="project-link muted" href="https://github.com/sayali3050/Care-Tracker" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <p class="section-tag">05 — Education &amp; certifications</p>
+      <h2 class="section-title">Always learning</h2>
+      <div class="edu-grid">
+        <div class="edu-list">
+          <div class="edu reveal">
+            <div>
+              <h3>Thakur College of Engineering and Technology</h3>
+              <p>B.E. Electronics &amp; Telecommunication Engineering</p>
+            </div>
+            <div class="edu-meta"><b>CGPA 7.88</b><span>Aug 2023 – Present</span></div>
+          </div>
+          <div class="edu reveal">
+            <div>
+              <h3>Lokmanya High School &amp; Junior College</h3>
+              <p>HSC, Higher Secondary Education</p>
+            </div>
+            <div class="edu-meta"><b>75.50%</b><span>2021 – 2023</span></div>
+          </div>
+          <div class="edu reveal">
+            <div>
+              <h3>St. Xavier's High School</h3>
+              <p>SSC, Secondary School Education</p>
+            </div>
+            <div class="edu-meta"><b>75.00%</b><span>2020 – 2021</span></div>
+          </div>
+        </div>
+
+        <div class="certs reveal">
+          <h3>Certifications</h3>
+          <div class="cert-group">
+            <p class="cert-issuer">Anthropic</p>
+            <ul>
+              <li>Claude Code in Action</li>
+              <li>Building with the Claude API</li>
+              <li>Introduction to MCP</li>
+              <li>MCP: Advanced Topics</li>
+              <li>Agent Skills</li>
+            </ul>
+          </div>
+          <div class="cert-group">
+            <p class="cert-issuer">DeepLearning.AI</p>
+            <ul><li>Evaluating AI Agents</li></ul>
+          </div>
+          <div class="cert-group">
+            <p class="cert-issuer">Cisco</p>
+            <ul><li>Python Programming</li></ul>
+          </div>
+          <div class="cert-group">
+            <p class="cert-issuer">Udemy</p>
+            <ul><li>The Complete Python Developer</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAB -->
+    <section id="lab" class="section">
+      <p class="section-tag">06 — The Lab</p>
+      <h2 class="section-title">What I'm building next</h2>
+      <p class="section-lead">Experiments on the frontier of agentic AI, currently in progress.</p>
+      <div class="lab-grid">
+        <div class="lab-card reveal">
+          <span class="badge">In progress</span>
+          <h3>🔌 MCP Toolbelt</h3>
+          <p>A Model Context Protocol server that gives any agent safe, read-scoped access to Postgres, docs and GitHub through one standard interface.</p>
+          <div class="tags"><span>MCP</span><span>Python</span><span>FastAPI</span></div>
+        </div>
+        <div class="lab-card reveal">
+          <span class="badge">In progress</span>
+          <h3>🧩 Claude Agent Skills Pack</h3>
+          <p>Reusable Agent Skills for Claude Code that package team workflows (code review, release notes, data checks) so any agent can load them on demand.</p>
+          <div class="tags"><span>Claude Code</span><span>Agent Skills</span><span>Claude API</span></div>
+        </div>
+        <div class="lab-card reveal">
+          <span class="badge">Exploring</span>
+          <h3>📊 Agent Eval Harness</h3>
+          <p>Scoring agent traces for tool-choice accuracy, groundedness and cost, using LLM-as-judge plus golden datasets, so agents improve measurably.</p>
+          <div class="tags"><span>Evals</span><span>LLM-as-judge</span><span>Tracing</span></div>
+        </div>
+        <div class="lab-card reveal">
+          <span class="badge">Exploring</span>
+          <h3>🎙️ Voice Safety Assistant</h3>
+          <p>A voice-first extension of SafeOps: workers speak a hazard in Marathi or Hindi, and a local speech model plus LLM files a structured report.</p>
+          <div class="tags"><span>Whisper</span><span>Multilingual</span><span>Local LLM</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <p class="section-tag">07 — Contact</p>
+      <h2 class="contact-title">Let's build <span class="grad">something</span>.</h2>
+      <p class="section-lead">Have a role, a project or an idea about agents? My inbox is open.</p>
+      <a class="contact-email" href="mailto:sayalibhagyawant544@gmail.com">sayalibhagyawant544@gmail.com</a>
+
+      <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/xnppzegg" method="POST">
+        <div class="form-row">
+          <label>Name<input type="text" name="name" required placeholder="Your name" /></label>
+          <label>Email<input type="email" name="email" required placeholder="you@company.com" /></label>
+        </div>
+        <label>Message<textarea name="message" rows="5" required placeholder="Tell me what you're building…"></textarea></label>
+        <button type="submit" class="btn">Send message ✉</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+
+      <div class="contact-links">
+        <a href="https://github.com/sayali3050" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/sayali-bhagyawant-726a87310/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://drive.google.com/file/d/1Oyu4a_1qs8sjJwF7FfjTXfUL7Ve95aMi/view?usp=sharing" target="_blank" rel="noopener">Résumé ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Designed &amp; built by Sayali Bhagyawant · <span id="year"></span></p>
+    <a href="#top" class="to-top" aria-label="Back to top">↑</a>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Playground · Sayali Bhagyawant</title>
+  <meta name="description" content="The fun version of Sayali's portfolio: mini-games, agent wisdom cards and a lofi radio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      var t; try { t = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23c6f432'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='700' fill='%230a0a0f'>S</text></svg>" />
+</head>
+<body data-root="">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a href="index.html" class="logo">sayali<span>.</span></a>
+    <a class="back-link" href="index.html">← Back to the serious version</a>
+  </header>
+
+  <main>
+    <section class="play-head">
+      <p class="eyebrow"><span class="dot"></span> you found the playground</p>
+      <h1>The <span class="grad">fun</span> version.</h1>
+      <p>Put some lofi on, squash a few bugs, and see how fast you can type like an AI engineer. Your high scores stay in this browser.</p>
+    </section>
+
+    <div class="play-grid">
+      <!-- LOFI -->
+      <section class="play-card wide reveal">
+        <div class="lofi">
+          <div class="vinyl" id="vinyl" aria-hidden="true"></div>
+          <div class="lofi-info">
+            <b>sayali.fm · beats to debug to</b>
+            <span id="lofi-status">Generated live in your browser, never the same twice.</span>
+          </div>
+          <label class="play-bar">vol <input type="range" id="lofi-vol" min="0" max="100" value="55" aria-label="Volume" /></label>
+          <button class="btn" id="lofi-btn" type="button">▶ Play</button>
+        </div>
+      </section>
+
+      <!-- BUG SQUASH -->
+      <section class="play-card reveal">
+        <h2>🐛 Bug Squash</h2>
+        <p>Bugs are escaping into production! Click them before they vanish. Don't squash the ✨ features.</p>
+        <div class="play-bar">
+          <span>Score <b id="bug-score">0</b></span>
+          <span>Time <b id="bug-time">30</b>s</span>
+          <span>Best <b id="bug-best">0</b></span>
+        </div>
+        <div class="arena" id="bug-arena">
+          <p class="arena-msg" id="bug-msg">Ready to debug?</p>
+        </div>
+        <button class="btn" id="bug-start" type="button">Start shift</button>
+      </section>
+
+      <!-- PROMPT SPRINT -->
+      <section class="play-card reveal">
+        <h2>⌨️ Prompt Sprint</h2>
+        <p>Type as many AI-engineering words as you can in 30 seconds. Press space or enter after each word.</p>
+        <div class="play-bar">
+          <span>Words <b id="type-score">0</b></span>
+          <span>Time <b id="type-time">30</b>s</span>
+          <span>Best <b id="type-best">0</b></span>
+        </div>
+        <div class="typer-word" id="type-word" aria-live="polite">press start</div>
+        <input class="typer-input" id="type-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here…" disabled aria-label="Type the word shown" />
+        <button class="btn" id="type-start" type="button">Start sprint</button>
+      </section>
+
+      <!-- AGENT WISDOM -->
+      <section class="play-card wide reveal">
+        <h2>🔮 Agent wisdom</h2>
+        <p>Flip a card for a hard-won lesson about building with LLMs.</p>
+        <div class="wisdom-deck" id="wisdom-deck"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Designed &amp; built by Sayali Bhagyawant · <span id="year"></span></p>
+    <a href="index.html" class="to-top" aria-label="Back to home">↩</a>
+  </footer>
+
+  <script src="common.js"></script>
+  <script src="playground.js"></script>
+</body>
+</html>

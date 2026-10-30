@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SafeOps · Sayali Bhagyawant</title>
+  <meta name="description" content="Write-up: SafeOps, an AI-assisted occupational health and safety platform." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    (function () {
+      var t; try { t = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23c6f432'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='700' fill='%230a0a0f'>S</text></svg>" />
+</head>
+<body data-root="../">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="writeup">
+    <a class="back-link" href="../index.html#work">← All work</a>
+
+    <header class="writeup-head">
+      <p class="project-meta">02 / Final-year project · Full-stack + AI</p>
+      <h1>SafeOps</h1>
+      <p class="project-tagline">An AI-assisted occupational health &amp; safety platform.</p>
+    </header>
+
+    <div class="project-thumb thumb-safeops writeup-hero">
+      <div class="mock-ui">
+        <div class="mock-row warn">⚠ Hazard reported · Line 3</div>
+        <div class="mock-row">🤖 AI: "Slip hazard, suggest wet-floor control"</div>
+        <div class="mock-row ok">✓ CAPA closed by supervisor</div>
+      </div>
+    </div>
+
+    <dl class="facts">
+      <div><dt>Type</dt><dd>Final-year engineering project</dd></div>
+      <div><dt>Stack</dt><dd>React · TypeScript · FastAPI · PostgreSQL · OpenAI · Docker</dd></div>
+      <div><dt>Links</dt><dd><a href="https://github.com/sayali3050/OHS-Platform" target="_blank" rel="noopener">GitHub ↗</a></dd></div>
+    </dl>
+
+    <article class="prose">
+      <h2><span>01</span>The problem</h2>
+      <p>On industrial sites, hazards often go unreported because reporting is slow, paper-based or only in English. Physical strain and repetitive work, the <b>drudgery</b> that causes worker fatigue, is even harder to see in the data.</p>
+      <p>SafeOps started from an ergonomic analysis of industrial work processes: find what causes fatigue, then design <b>safer work practices</b> through structured assessment. The platform turns that analysis into a tool workers and supervisors use every day.</p>
+
+      <h2><span>02</span>What I built</h2>
+      <ul>
+        <li><b>Mobile hazard &amp; incident reporting</b> in English, Hindi, Marathi and German.</li>
+        <li><b>CAPA workflow:</b> supervisors investigate reports and close them with corrective and preventive actions.</li>
+        <li><b>Admin dashboards</b> for risk, compliance and physical workload ("drudgery").</li>
+        <li><b>Risk scoring and an ergonomics questionnaire.</b></li>
+        <li><b>Training courses, PPE tracking and daily checklists.</b></li>
+        <li><b>A searchable knowledge base</b> for company SOPs, plus analytics with CSV/PDF export.</li>
+        <li><b>A site-wide emergency alarm.</b></li>
+      </ul>
+
+      <h2><span>03</span>Where the AI fits</h2>
+      <ol class="flow">
+        <li><b>A worker writes a report</b>Free text, from a phone, in their own language.</li>
+        <li><b>AI structures it</b>The model turns it into a structured report and classifies the hazard.</li>
+        <li><b>AI suggests controls</b>It proposes possible controls, clearly <b>labelled as suggestions</b>.</li>
+        <li><b>A human decides</b>A supervisor reviews, investigates and closes the report through CAPA.</li>
+      </ol>
+      <div class="callout"><b>Humans stay in charge.</b> In safety, a confident wrong answer is dangerous, so every AI output is shown as a suggestion and the final call always belongs to a person.</div>
+
+      <h2><span>04</span>Engineering decisions</h2>
+      <ul>
+        <li><b>Provider abstraction:</b> the OpenAI API (chat and embeddings) sits behind an interface, so the model provider can be swapped without touching the rest of the app.</li>
+        <li><b>Offline Demo AI mode:</b> the full app can be demoed with no API key or internet connection.</li>
+        <li><b>Security:</b> JWT authentication, bcrypt password hashing and role-based access control for workers, supervisors and admins.</li>
+        <li><b>Typed end to end:</b> TypeScript on the frontend, with Pydantic v2 and SQLAlchemy 2 (plus Alembic migrations) on the backend.</li>
+        <li><b>One-command setup:</b> Docker Compose runs the app, PostgreSQL 16 and nginx together.</li>
+      </ul>
+    </article>
+
+    <a class="next-project" href="tam-triage-agent.html">
+      <div><small>Next project</small><strong>TAM Triage Agent</strong></div>
+      <span>→</span>
+    </a>
+  </main>
+
+  <script src="../common.js"></script>
+</body>
+</html>

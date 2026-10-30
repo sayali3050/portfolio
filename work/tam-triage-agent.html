@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TAM Triage Agent · Sayali Bhagyawant</title>
+  <meta name="description" content="Write-up: an LLM agent that chooses its own tools to triage support tickets." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    (function () {
+      var t; try { t = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.dataset.theme = t || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23c6f432'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='700' fill='%230a0a0f'>S</text></svg>" />
+</head>
+<body data-root="../">
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="writeup">
+    <a class="back-link" href="../index.html#work">← All work</a>
+
+    <header class="writeup-head">
+      <p class="project-meta">03 / Agentic AI · Support automation</p>
+      <h1>TAM Triage Agent</h1>
+      <p class="project-tagline">An LLM agent that chooses its own tools to triage support tickets.</p>
+    </header>
+
+    <div class="project-thumb thumb-tam writeup-hero">
+      <div class="mock-flow">
+        <span>ticket</span><i>→</i><span>resolve_account</span><i>→</i><span>search_kb</span><i>→</i><span class="hl">route: TAM</span>
+      </div>
+    </div>
+
+    <dl class="facts">
+      <div><dt>Type</dt><dd>Engineering take-home for a TAM intern role</dd></div>
+      <div><dt>Stack</dt><dd>Python · Tool calling · Ollama / Anthropic / OpenAI</dd></div>
+      <div><dt>Links</dt><dd><a href="https://github.com/sayali3050/tam-agent-task" target="_blank" rel="noopener">GitHub ↗</a></dd></div>
+    </dl>
+
+    <article class="prose">
+      <h2><span>01</span>The brief</h2>
+      <p>A procurement-software company gets support tickets that need fast, consistent triage. Build an agent that handles <b>one ticket at a time</b> and does what a Technical Account Manager would: understand the customer, check the context, find the right policy, and decide what happens next.</p>
+      <p>The data was realistic and messy: roughly <b>3,000 tickets, 200 accounts and 390 knowledge-base articles</b>, with some tickets missing their <code>account_id</code>.</p>
+
+      <h2><span>02</span>Agent, not pipeline</h2>
+      <p>The key requirement: the <b>LLM chooses which tools to call</b>, in whatever order the ticket needs, instead of running a fixed sequence. A ticket with a known account skips the lookup, while a vague one may need several knowledge-base searches.</p>
+      <ol class="flow">
+        <li><b>Resolve the account</b>Even when <code>account_id</code> is blank, using the other signals in the ticket.</li>
+        <li><b>Gather context</b>Tier, renewal date, usage trend, past escalations and related tickets.</li>
+        <li><b>Retrieve knowledge</b>Relevant KB articles, including the support policy.</li>
+        <li><b>Decide</b>Category, priority, routing, escalation, whether to notify the TAM, duplicate status and whether to ask for clarification.</li>
+        <li><b>Write</b>A customer reply, an internal note and a step-by-step reasoning trace.</li>
+      </ol>
+
+      <h2><span>03</span>Design decisions</h2>
+      <ul>
+        <li><b>Schema-locked output:</b> every decision is returned in a fixed schema, so downstream systems can trust the shape of the result.</li>
+        <li><b>Provider-agnostic LLM client:</b> runs on Ollama (local and free), Anthropic or OpenAI, configured through a <code>.env</code> file.</li>
+        <li><b>Reasoning trace for every step:</b> a support lead can see <em>why</em> the agent escalated a ticket, not just that it did.</li>
+        <li><b>Clean package layout:</b> data loaders, LLM client, schema and agent are separate modules, with validation scripts alongside.</li>
+      </ul>
+      <div class="callout">The animated terminal on my home page is a stylised version of this agent's trace: <code>resolve_account → get_related_tickets → search_kb → decide</code>.</div>
+    </article>
+
+    <a class="next-project" href="local-rag-agent.html">
+      <div><small>Next project</small><strong>Local RAG AI Agent</strong></div>
+      <span>→</span>
+    </a>
+  </main>
+
+  <script src="../common.js"></script>
+</body>
+</html>
